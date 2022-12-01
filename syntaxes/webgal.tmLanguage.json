@@ -3,38 +3,158 @@
     "name": "WebGAL Script",
     "patterns": [
         {
-            "include": "#builtin-command"
+            "include": "#comment-"
         },
         {
-            "include": "#comment"
-        },
-        {
-            "include": "#operator"
-        },
-        {
-            "include": "#parameter"
+            "include": "#statement"
         }
     ],
     "repository": {
-        "builtin-command": {
-            "match": "\\b(intro|changeBg|changeFigure|miniAvatar|changeScene|choose|end|bgm|playVideo|setComplexAnimation|setFilter|pixiInit|pixiPerform|label|jumpLabel|setVar|callScene|showVars|unlockCg|unlockBgm|say|filmMode|callScene|setTextbox|setAnimation)\\b",
+        "character": {
+            "match": ".*",
+            "name": "entity.name.type.character.webgal"
+        },
+        "command": {
+            "match": ".*",
+            "name": "support.function.command.webgal"
+        },
+        "comment-": {
+            "match": "\\;.*?$",
+            "name": "comment.line.comment.webgal"
+        },
+        "operator": {
+            "match": "[\\:\\=\\<\\>\\|\\+\\-]",
+            "name": "keyword.operator.operator.webgal"
+        },
+        "utterance": {
+            "match": ".*",
+            "name": "string.unquoted.utterance.webgal"
+        },
+        "character-colon": {
+            "match": "^(?!(?:intro|changeBg|changeFigure|miniAvatar|changeScene|choose|end|bgm|playVideo|setComplexAnimation|setFilter|pixiInit|pixiPerform|label|jumpLabel|setVar|callScene|showVars|unlockCg|unlockBgm|say|filmMode|callScene|setTextbox|setAnimation)\\:)(.*?)(\\:)([^\\;\\n]*?)($|\\;.*?$)",
             "captures": {
                 "1": {
-                    "name": "support.function.webgal"
+                    "name": "meta.character.webgal",
+                    "patterns": [
+                        {
+                            "include": "#character"
+                        }
+                    ]
+                },
+                "2": {
+                    "patterns": [
+                        {
+                            "include": "#operator"
+                        }
+                    ]
+                },
+                "3": {
+                    "patterns": [
+                        {
+                            "match": ".*",
+                            "name": "string.unquoted.webgal.todo"
+                        }
+                    ]
+                },
+                "4": {
+                    "patterns": [
+                        {
+                            "include": "#comment-"
+                        }
+                    ]
                 }
             }
         },
-        "comment": {
-            "name": "comment.line.webgal",
-            "match": "(?<=\\;)(.+?)$"
+        "command-colon": {
+            "match": "^(intro|changeBg|changeFigure|miniAvatar|changeScene|choose|end|bgm|playVideo|setComplexAnimation|setFilter|pixiInit|pixiPerform|label|jumpLabel|setVar|callScene|showVars|unlockCg|unlockBgm|say|filmMode|callScene|setTextbox|setAnimation)(\\:)([^\\;\\n]*?)($|\\;.*?$)",
+            "captures": {
+                "1": {
+                    "name": "meta.command.webgal",
+                    "patterns": [
+                        {
+                            "include": "#command"
+                        }
+                    ]
+                },
+                "2": {
+                    "patterns": [
+                        {
+                            "include": "#operator"
+                        }
+                    ]
+                },
+                "3": {
+                    "patterns": [
+                        {
+                            "match": ".*",
+                            "name": "variable.parameter.webgal.todo"
+                        }
+                    ]
+                },
+                "4": {
+                    "patterns": [
+                        {
+                            "include": "#comment-"
+                        }
+                    ]
+                }
+            }
         },
-        "operator": {
-            "name": "keyword.operator.webgal",
-            "match": "[\\:\\=\\<\\>\\|\\;]"
+        "command-semicolon": {
+            "match": "^(intro|changeBg|changeFigure|miniAvatar|changeScene|choose|end|bgm|playVideo|setComplexAnimation|setFilter|pixiInit|pixiPerform|label|jumpLabel|setVar|callScene|showVars|unlockCg|unlockBgm|say|filmMode|callScene|setTextbox|setAnimation)($|\\;.*?$)",
+            "captures": {
+                "1": {
+                    "name": "meta.command.webgal",
+                    "patterns": [
+                        {
+                            "include": "#command"
+                        }
+                    ]
+                },
+                "2": {
+                    "patterns": [
+                        {
+                            "include": "#comment-"
+                        }
+                    ]
+                }
+            }
         },
-        "parameter": {
-            "name": "variable.parameter.webgal",
-            "match": "(?<=\\s\\-)(.+?)(?=\\=)"
+        "utterance-semicolon": {
+            "match": "^(?!(?:intro|changeBg|changeFigure|miniAvatar|changeScene|choose|end|bgm|playVideo|setComplexAnimation|setFilter|pixiInit|pixiPerform|label|jumpLabel|setVar|callScene|showVars|unlockCg|unlockBgm|say|filmMode|callScene|setTextbox|setAnimation)\\;)([^\\:\\;\\n]+?)(\\;.*?$)",
+            "captures": {
+                "1": {
+                    "patterns": [
+                        {
+                            "match": ".*",
+                            "name": "string.unquoted.webgal.todo"
+                        }
+                    ]
+                },
+                "2": {
+                    "patterns": [
+                        {
+                            "include": "#comment-"
+                        }
+                    ]
+                }
+            }
+        },
+        "statement": {
+            "patterns": [
+                {
+                    "include": "#character-colon"
+                },
+                {
+                    "include": "#command-colon"
+                },
+                {
+                    "include": "#command-semicolon"
+                },
+                {
+                    "include": "#utterance-semicolon"
+                }
+            ]
         }
     },
     "scopeName": "source.webgal"
