@@ -1,0 +1,42 @@
+{
+    "name": "webgal-script-basics",
+    "displayName": "WebGAL Script Basics",
+    "description": "Basic syntax highlighting for WebGAL Script.",
+    "version": "0.1.0",
+    "publisher": "C6H5-NO2",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/C6H5-NO2/webgal-script-basics"
+    },
+    "engines": {
+        "vscode": "^1.43.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "webgal",
+                "aliases": [
+                    "WebGAL Script",
+                    "WebGAL",
+                    "webgal"
+                ],
+                "extensions": [],
+                "filenames": [
+                    "start.txt"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "webgal",
+                "scopeName": "source.webgal",
+                "path": "./syntaxes/webgal.tmLanguage.json"
+            }
+        ]
+    }
+}

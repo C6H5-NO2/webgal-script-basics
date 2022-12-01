@@ -1,0 +1,41 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "WebGAL Script",
+    "patterns": [
+        {
+            "include": "#builtin-command"
+        },
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#operator"
+        },
+        {
+            "include": "#parameter"
+        }
+    ],
+    "repository": {
+        "builtin-command": {
+            "match": "\\b(intro|changeBg|changeFigure|miniAvatar|changeScene|choose|end|bgm|playVideo|setComplexAnimation|setFilter|pixiInit|pixiPerform|label|jumpLabel|setVar|callScene|showVars|unlockCg|unlockBgm|say|filmMode|callScene|setTextbox|setAnimation)\\b",
+            "captures": {
+                "1": {
+                    "name": "support.function.webgal"
+                }
+            }
+        },
+        "comment": {
+            "name": "comment.line.webgal",
+            "match": "(?<=\\;)(.+?)$"
+        },
+        "operator": {
+            "name": "keyword.operator.webgal",
+            "match": "[\\:\\=\\<\\>\\|\\;]"
+        },
+        "parameter": {
+            "name": "variable.parameter.webgal",
+            "match": "(?<=\\s\\-)(.+?)(?=\\=)"
+        }
+    },
+    "scopeName": "source.webgal"
+}
