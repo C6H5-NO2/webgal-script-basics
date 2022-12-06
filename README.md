@@ -1,8 +1,8 @@
 # webgal-script-basics
-WebGAL Script syntax highlighting for Visual Studio Code.
+[WebGAL](https://github.com/MakinoharaShoko/WebGAL) Script syntax highlighting for Visual Studio Code.
 
 
-## Installation
+## Manual Installation
 1. Clone the repo into the extension folder.  
    - On Windows  
      `git clone git@github.com:C6H5-NO2/webgal-script-basics.git %USERPROFILE%/.vscode/extensions/webgal-script-basics`

@@ -3,6 +3,7 @@
     "displayName": "WebGAL Script Basics",
     "description": "Basic syntax highlighting for WebGAL Script.",
     "version": "0.2.0",
+    "icon": "images/webgal.png",
     "publisher": "C6H5-NO2",
     "license": "MIT",
     "repository": {
@@ -40,9 +41,6 @@
                 ],
                 "filenamePatterns": [
                     "**/game/config.txt"
-                ],
-                "filenames": [
-                    "config.txt"
                 ]
             }
         ],
