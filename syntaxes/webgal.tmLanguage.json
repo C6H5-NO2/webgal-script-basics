@@ -136,7 +136,7 @@
         },
         "character-colon": {
             "comment": "[char]:[utt[ -args]][;cmt]",
-            "match": "^(?!(?:intro|changeBg|changeFigure|miniAvatar|changeScene|choose|end|bgm|playVideo|setComplexAnimation|setFilter|pixiInit|pixiPerform|label|jumpLabel|setVar|callScene|showVars|unlockCg|unlockBgm|say|filmMode|callScene|setTextbox|setAnimation)\\:)(.*?)(\\:)([^\\;\\n]*?)($|\\;.*?$)",
+            "match": "^(?!(?:intro|changeBg|changeFigure|miniAvatar|changeScene|choose|end|bgm|playVideo|setComplexAnimation|setFilter|pixiInit|pixiPerform|label|jumpLabel|setVar|callScene|showVars|unlockCg|unlockBgm|say|filmMode|callScene|setTextbox|setAnimation|setTempAnimation)\\:)(.*?)(\\:)([^\\;\\n]*?)($|\\;.*?$)",
             "captures": {
                 "1": {
                     "name": "meta.character.webgal",
