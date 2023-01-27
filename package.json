@@ -2,7 +2,8 @@
     "name": "webgal-script-basics",
     "displayName": "WebGAL Script Basics",
     "description": "Basic syntax highlighting for WebGAL Script.",
-    "version": "0.1.0",
+    "version": "0.2.0",
+    "icon": "images/webgal.png",
     "publisher": "C6H5-NO2",
     "license": "MIT",
     "repository": {
@@ -24,11 +25,23 @@
                     "WebGAL",
                     "webgal"
                 ],
-                "extensions": [],
+                "filenamePatterns": [
+                    "**/game/scene/*.txt"
+                ],
                 "filenames": [
                     "start.txt"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./languages/webgal.json"
+            },
+            {
+                "id": "webgal-config",
+                "aliases": [
+                    "WebGAL Config",
+                    "webgal config"
+                ],
+                "filenamePatterns": [
+                    "**/game/config.txt"
+                ]
             }
         ],
         "grammars": [
@@ -36,6 +49,11 @@
                 "language": "webgal",
                 "scopeName": "source.webgal",
                 "path": "./syntaxes/webgal.tmLanguage.json"
+            },
+            {
+                "language": "webgal-config",
+                "scopeName": "source.webgal-config",
+                "path": "./syntaxes/webgal-config.tmLanguage.json"
             }
         ]
     }
