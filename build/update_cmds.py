@@ -5,7 +5,7 @@ from urllib.request import urlopen
 
 
 def main():
-    url = 'https://raw.githubusercontent.com/MakinoharaShoko/WebGAL/main/packages/parser/src/config/scriptConfig.ts'
+    url = 'https://raw.githubusercontent.com/MakinoharaShoko/WebGAL/main/packages/webgal/src/Core/config/scriptConfig.ts'
     with urlopen(url) as response:  # type: HTTPResponse
         if response.status != HTTPStatus.OK:
             raise RuntimeError(f'HTTP GET failed with {response.status}')
