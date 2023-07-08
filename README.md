@@ -5,10 +5,10 @@
 ## Manual Installation
 1. Clone the repo into the extension folder.  
    - On Windows  
-     `git clone git@github.com:C6H5-NO2/webgal-script-basics.git %USERPROFILE%/.vscode/extensions/webgal-script-basics`
+     `git clone https://github.com/C6H5-NO2/webgal-script-basics.git %USERPROFILE%/.vscode/extensions/webgal-script-basics`
 
    - On Linux / macOS  
-     `git clone git@github.com:C6H5-NO2/webgal-script-basics.git ~/.vscode/extensions/webgal-script-basics`
+     `git clone https://github.com/C6H5-NO2/webgal-script-basics.git ~/.vscode/extensions/webgal-script-basics`
 
 2. Restart VS Code and select `WebGAL Script` from the language mode dropdown.
 
