@@ -21,6 +21,6 @@ jobs:
       - name: publish extension
         run: |
           vsce ls
-          vsce publish --pat ${{ secrets.VSCE_TOKEN }}
-        # env:
-        #   VSCE_PAT: ${{ secrets.VSCE_TOKEN }}
+          vsce publish
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_TOKEN }}
