@@ -1,0 +1,72 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "WebGAL Config",
+    "patterns": [
+        {
+            "include": "#comment-line"
+        },
+        {
+            "include": "#statement"
+        }
+    ],
+    "repository": {
+        "command": {
+            "match": ".+",
+            "name": "support.function.command.webgal-config"
+        },
+        "comment-line": {
+            "match": "\\;.*?$",
+            "name": "comment.line.webgal-config"
+        },
+        "operator": {
+            "match": "[\\:\\=\\<\\>\\|\\+\\-]",
+            "name": "keyword.operator.webgal-config"
+        },
+        "parameter": {
+            "match": ".+",
+            "name": "variable.other.webgal-config"
+        },
+        "command-colon": {
+            "comment": "cmd:[arg][;cmt]",
+            "match": "^(${WEBGAL_CFG})(\\:)([^\\;\\n]*?)($|\\;.*?$)",
+            "captures": {
+                "1": {
+                    "patterns": [
+                        {
+                            "include": "#command"
+                        }
+                    ]
+                },
+                "2": {
+                    "patterns": [
+                        {
+                            "include": "#operator"
+                        }
+                    ]
+                },
+                "3": {
+                    "patterns": [
+                        {
+                            "include": "#parameter"
+                        }
+                    ]
+                },
+                "4": {
+                    "patterns": [
+                        {
+                            "include": "#comment-line"
+                        }
+                    ]
+                }
+            }
+        },
+        "statement": {
+            "patterns": [
+                {
+                    "include": "#command-colon"
+                }
+            ]
+        }
+    },
+    "scopeName": "source.webgal-config"
+}
