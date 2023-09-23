@@ -23,19 +23,19 @@ def subst(inpath: str, outpath: str, pattern: str, repl: str):
 
 
 def update_commands():
-    url = 'https://raw.githubusercontent.com/MakinoharaShoko/WebGAL/main/packages/webgal/src/Core/config/scriptConfig.ts'
+    url = 'https://raw.githubusercontent.com/MakinoharaShoko/WebGAL/main/packages/webgal/src/Core/parser/sceneParser.ts'
     pattern = r"scriptString:\s*'([^']+)'"
     tokens = fetch(url, pattern)
     print(f'Found {len(tokens)} commands: {tokens}')
-    subst('build/webgal.tmLanguage.json.tpl', 'syntaxes/webgal.tmLanguage.json', r'\${WEBGAL_CMD}', '|'.join(tokens))
+    subst('build/webgal.tmLanguage.json.in', 'syntaxes/webgal.tmLanguage.json', r'\${WEBGAL_CMD}', '|'.join(tokens))
 
 
 def update_configs():
     url = 'https://raw.githubusercontent.com/MakinoharaShoko/WebGAL/main/packages/webgal/src/Core/util/coreInitialFunction/infoFetcher.ts'
-    pattern = r"e\[0\] === '([^']+)'"
+    pattern = r"case\s*'([^']+)'"
     tokens = fetch(url, pattern)
     print(f'Found {len(tokens)} config keys: {tokens}')
-    subst('build/webgal-config.tmLanguage.json.tpl', 'syntaxes/webgal-config.tmLanguage.json', r'\${WEBGAL_CFG}', '|'.join(tokens))
+    subst('build/webgal-config.tmLanguage.json.in', 'syntaxes/webgal-config.tmLanguage.json', r'\${WEBGAL_CFG}', '|'.join(tokens))
 
 
 def main():
