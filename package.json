@@ -2,7 +2,7 @@
     "name": "webgal-script-basics",
     "displayName": "WebGAL Script Basics",
     "description": "Basic syntax highlighting for WebGAL Script.",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "icon": "images/webgal.png",
     "publisher": "C6H5-NO2",
     "license": "MIT",
