@@ -1,5 +1,5 @@
 # webgal-script-basics
-[WebGAL](https://github.com/MakinoharaShoko/WebGAL) Script syntax highlighting for Visual Studio Code.
+[WebGAL](https://github.com/MakinoharaShoko/WebGAL) Script syntax highlighting for Visual Studio Code. Compatible with WebGAL v4.4.6.4.
 
 
 ## Manual Installation
